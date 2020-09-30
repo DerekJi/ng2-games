@@ -49,11 +49,17 @@ export class TetrisShapeComponent implements OnInit, OnDestroy {
       unitArray.push(unit);
     }
 
+    console.log(`size = ${tileConfigs.size}`);
+
     for (let i = 0; i < numberOfTiles; i++) {
-      const tileLeft = this.left + i * tileConfigs.size;
+      const tileLeft = (+this.left + i) * tileConfigs.size;
+      console.log(`${i} left = ${tileLeft}`);
+
       for (let j = 0; j < numberOfTiles ; j++ ) {
         if (unitArray[i].substr(j, 1) === '1') {
-          const tileTop = this.top + j * tileConfigs.size;
+          const tileTop = (+this.top + j - 1) * tileConfigs.size;
+          console.log(`${j} top = ${tileTop}`);
+
           const tile: ITileOptions = {
             left: tileLeft,
             top: tileTop,

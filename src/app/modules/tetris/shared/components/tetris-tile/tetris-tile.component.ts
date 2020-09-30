@@ -49,13 +49,13 @@ export class TetrisTileComponent implements OnInit {
 
   getStyles(configs: ITileConfigs) {
     const bp = this.backgroundPosition(configs.size, configs.iconId, this.colorId);
-        const bpx = this.backgroundPositionX(bp);
-        const bpy = this.backgroundPositionY(bp);
-        return {
-          'top': `${this.top}px`,
-          'left': `${this.left}px`,
-          'background-position': `${bpx}px ${bpy}px`
-        }
+    const bpx = this.backgroundPositionX(bp);
+    const bpy = this.backgroundPositionY(bp);
+    return {
+      'top': `${this.top}px`,
+      'left': `${this.left}px`,
+      'background-position': `${bpx}px ${bpy}px`
+    }
   }
 
   //#region: Tile Options
