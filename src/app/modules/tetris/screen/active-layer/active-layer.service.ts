@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { DefaultTetrisConfigs } from '@tetris-shared/config';
 import { IShapeOptions } from '@tetris-shared/models/shape-options.interface';
 import { BehaviorSubject } from 'rxjs';
 
@@ -26,13 +27,17 @@ export class ActiveLayerService {
   }
 
   public moveLeft() {
-    this._options.left -= 1;
-    this.setOptions(this._options);
+    if (this._options.left > 0) {
+      this._options.left -= 1;
+      this.setOptions(this._options);
+    }
   }
 
   public moveRight() {
-    this._options.left += 1;
-    this.setOptions(this._options);
+    if (this._options.left + 4 < DefaultTetrisConfigs.matrixCols) {
+      this._options.left += 1;
+      this.setOptions(this._options);
+    }
   }
 
   public moveDown() {
