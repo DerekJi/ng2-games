@@ -1,3 +1,9 @@
-<app-tetris-shape
-  direction="1" top="0" left="3" color="3"
-></app-tetris-shape>>
+<ng-container *ngIf="options$ | async as options">
+  <!-- <pre>{{ options | json }}</pre> -->
+  <app-tetris-shape
+    [direction]="options.direction"
+    [top]="options.top"
+    [left]="options.left"
+    [color]="options.colorId"
+  ></app-tetris-shape>>
+</ng-container>

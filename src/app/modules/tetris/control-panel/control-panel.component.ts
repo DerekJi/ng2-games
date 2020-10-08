@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActiveLayerService } from '@tetris/screen/active-layer/active-layer.service';
 
 @Component({
   selector: 'app-control-panel',
@@ -7,7 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ControlPanelComponent implements OnInit {
 
-  constructor() { }
+  moveLeft() { this.activeLayerService.moveLeft(); }
+  moveRight() { this.activeLayerService.moveRight(); }
+  moveDown() { this.activeLayerService.moveDown(); }
+
+  constructor(
+    protected activeLayerService: ActiveLayerService,
+  ) { }
 
   ngOnInit(): void {
   }

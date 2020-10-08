@@ -38,13 +38,13 @@
       </div>
       <div class="row d-flex justify-content-around">
         <div>
-          <span class="round-btn round-btn-medium bg-info p-4">
+          <span class="round-btn round-btn-medium bg-info p-4" (click)="moveLeft()">
             <i class="fa fa-arrow-left"></i>
           </span>
           <span class="label" hidden>MOVE LEFT</span>
         </div>
         <div>
-          <span class="round-btn round-btn-medium bg-info p-4">
+          <span class="round-btn round-btn-medium bg-info p-4" (click)="moveRight()">
             <i class="fa fa-arrow-right"></i>
           </span>
           <span class="label" hidden>MOVE RIGHT</span>
@@ -52,7 +52,7 @@
       </div>
       <div class="row d-flex justify-content-around">
         <div>
-          <span class="round-btn round-btn-medium bg-info p-4">
+          <span class="round-btn round-btn-medium bg-info p-4" (click)="moveDown()">
             <i class="fa fa-arrow-down"></i>
           </span>
           <span class="label" hidden>MOVE DOWN</span>

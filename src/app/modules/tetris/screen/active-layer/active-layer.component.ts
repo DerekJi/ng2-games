@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { IShapeOptions } from '@tetris-shared/models/shape-options.interface';
 import { Observable, of } from 'rxjs';
+
+import { ActiveLayerService } from './active-layer.service';
 
 @Component({
   selector: 'app-active-layer',
@@ -8,23 +11,11 @@ import { Observable, of } from 'rxjs';
 })
 export class ActiveLayerComponent implements OnInit {
 
-  get styles$(): Observable<any> {
-    return of(this.getStyle());
-  }
+  options$: Observable<IShapeOptions> = this.service.options$;
 
-  getStyle() {
-    return {
-      'top': `${this.options.top}px`,
-      'left': `${this.options.left}px`,
-    };
-  }
-
-  options = {
-    top: 0,
-    left: 4 * 28,
-  };
-
-  constructor() { }
+  constructor(
+    protected service: ActiveLayerService,
+  ) { }
 
   ngOnInit(): void {
   }
